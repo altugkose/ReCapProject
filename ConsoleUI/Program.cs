@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entity.Concrete;
 using System;
@@ -11,22 +12,21 @@ namespace ReCapProject
         static void Main(string[] args)
         {
             Car car1 = new Car();
-            car1.VehicleId = 2;
-            car1.BrandId = 4;
-            car1.ColorId = 5;
-            car1.DailyPrice = 400;
-            car1.Desciription = "Temiz çiziksiz";
+       
+            car1.Name = "Bmw";
+            car1.DailyPrice = 1500;
+            car1.Desciription = "Cabrio";
+            car1.ModelYear = 2020;
+
             
-            VehicleManager vehicleManager = new VehicleManager(new InMemoryVehicleDal());
-            vehicleManager.Add(car1);
+
+            CarManager carManager = new CarManager(new EfCarDal());
+            carManager.Add(car1);
+         
            
 
-            foreach (var car in vehicleManager.GetAll())
-            {
-                Console.WriteLine(car.Desciription);
-            }
 
- 
+
         }
     }
 }
