@@ -1,5 +1,4 @@
 ﻿using DataAccess.Abstract;
-using Entity.Abstract;
 using Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;

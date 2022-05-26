@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.Abstract
+namespace Core.DataAccess.EntityFramework
 {
-    public interface IEntity
+    public class EfEntityRepositoryBase<TEntity,TContext>
     {
-        string Name { get; set; }
-
-
     }
 }
